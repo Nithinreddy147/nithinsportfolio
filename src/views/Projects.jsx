@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import { useMediaQuery } from "react-responsive";
 import { ThemeContext } from "../themeProvider";
 import { motion } from "framer-motion";
 import textProj from "../assets/projects/text_case_converter-img.png";
 import blogProj from "../assets/projects/blogging_platform-img.png";
-import newsProj from "../assets/projects/newspedia-img.png"
+import newsProj from "../assets/projects/newspedia-img.png";
 
 const Projects = () => {
   const theme = useContext(ThemeContext);
@@ -31,8 +32,55 @@ const Projects = () => {
             }}
             class="max-w-xxl bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8"
           >
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-              <div style={{ width: "50%", padding: 50, margin: "auto" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                flexDirection: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "row"
+                  : "column",
+                flexWrap: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "wrap"
+                  : "nowrap",
+                alignItems: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "center"
+                  : "stretch",
+              }}
+            >
+              <div
+                style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "auto",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 40
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}
+              >
+                <a
+                  href="https://blogging-platform.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img class="rounded-t-lg w-full" src={blogProj} alt="" />
+                </a>
+              </div>
+              <div
+                style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "20px",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 20
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}
+              >
                 <a href="helo">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Blogging platform
@@ -50,7 +98,8 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/Blogging-platform"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -69,7 +118,8 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://blogging-platform.netlify.app/"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Visit Website
@@ -87,14 +137,6 @@ const Projects = () => {
                   </svg>
                 </a>
               </div>
-              <div style={{ margin: "auto", padding: 40, width: "50%" }}>
-                <a
-                  href="https://blogging-platform.netlify.app/"
-                  target="_blank" rel="noreferrer noopener"
-                >
-                  <img class="rounded-t-lg w-full" src={blogProj} alt="" />
-                </a>
-              </div>
             </div>
           </motion.div>
           <motion.div
@@ -106,8 +148,55 @@ const Projects = () => {
             }}
             class="max-w-xxl bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8"
           >
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-              <div style={{ width: "50%", padding: 50, margin: "auto" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                flexDirection: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "row"
+                  : "column",
+                flexWrap: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "wrap"
+                  : "nowrap",
+                alignItems: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "center"
+                  : "stretch",
+              }}
+            >
+              <div
+                style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "auto",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 40
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}
+              >
+                <a
+                  href="https://main--text-case-converter88.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img class="rounded-t-lg w-full" src={textProj} alt="" />
+                </a>
+              </div>
+              <div
+                style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "20px",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 20
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}
+              >
                 <a href="helo">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Text Case Converter Website
@@ -125,7 +214,8 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/Text-Case-Converter"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -144,7 +234,8 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://main--text-case-converter88.netlify.app/"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Visit Website
@@ -162,14 +253,6 @@ const Projects = () => {
                   </svg>
                 </a>
               </div>
-              <div style={{ margin: "auto", padding: 40, width: "50%" }}>
-                <a
-                  href="https://main--text-case-converter88.netlify.app/"
-                  target="_blank" rel="noreferrer noopener"
-                >
-                  <img class="rounded-t-lg w-full" src={textProj} alt="" />
-                </a>
-              </div>
             </div>
           </motion.div>
           <motion.div
@@ -181,8 +264,46 @@ const Projects = () => {
             }}
             class="max-w-xxl bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700 my-8"
           >
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-              <div style={{ width: "50%", padding: 50, margin: "auto" }}>
+            <div style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                flexDirection: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "row"
+                  : "column",
+                flexWrap: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "wrap"
+                  : "nowrap",
+                alignItems: useMediaQuery({ query: "(min-width: 768px)" })
+                  ? "center"
+                  : "stretch",
+              }}>
+              <div
+                style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "auto",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 40
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}>
+                <a href="/" target="_blank" rel="noreferrer noopener">
+                  <img class="rounded-t-lg w-full" src={newsProj} alt="" />
+                </a>
+              </div>
+              <div style={{
+                  margin: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "auto"
+                    : "20px",
+                  padding: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? 20
+                    : 20,
+                  width: useMediaQuery({ query: "(min-width: 768px)" })
+                    ? "50%"
+                    : "100%",
+                }}>
                 <a href="helo">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Newswave Aggregator
@@ -200,7 +321,8 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/News-app"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -219,7 +341,8 @@ const Projects = () => {
                 </a>
                 <a
                   href="/"
-                  target="_blank" rel="noreferrer noopener"
+                  target="_blank"
+                  rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 hidden"
                 >
                   Visit Website
@@ -235,14 +358,6 @@ const Projects = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </a>
-              </div>
-              <div style={{ margin: "auto", padding: 40, width: "50%" }}>
-                <a
-                  href="/"
-                  target="_blank" rel="noreferrer noopener"
-                >
-                  <img class="rounded-t-lg w-full" src={newsProj} alt="" />
                 </a>
               </div>
             </div>

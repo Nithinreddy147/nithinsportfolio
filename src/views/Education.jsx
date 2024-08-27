@@ -53,7 +53,7 @@ const Education = () => {
                   <div className="flex items-center justify-around">
                     <div>
                       <img
-                        style={{ width: 50, height: 50 }}
+                        style={{ width: 50, height: 50, marginRight:10 }}
                         src={el.img}
                         alt=""
                       />
