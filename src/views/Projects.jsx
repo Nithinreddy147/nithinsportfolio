@@ -239,7 +239,7 @@ const Projects = () => {
               </div>
               <div style={{ margin: "auto", padding: 40, width: "50%" }}>
                 <a
-                  //href="/"
+                  href="/"
                   target="_blank" rel="noreferrer noopener"
                 >
                   <img class="rounded-t-lg w-full" src={newsProj} alt="" />
