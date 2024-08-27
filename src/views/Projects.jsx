@@ -72,7 +72,7 @@ const Projects = () => {
                 style={{
                   margin: useMediaQuery({ query: "(min-width: 768px)" })
                     ? "auto"
-                    : "20px",
+                    : "auto",
                   padding: useMediaQuery({ query: "(min-width: 768px)" })
                     ? 20
                     : 20,
@@ -188,7 +188,7 @@ const Projects = () => {
                 style={{
                   margin: useMediaQuery({ query: "(min-width: 768px)" })
                     ? "auto"
-                    : "20px",
+                    : "auto",
                   padding: useMediaQuery({ query: "(min-width: 768px)" })
                     ? 20
                     : 20,
@@ -296,7 +296,7 @@ const Projects = () => {
               <div style={{
                   margin: useMediaQuery({ query: "(min-width: 768px)" })
                     ? "auto"
-                    : "20px",
+                    : "auto",
                   padding: useMediaQuery({ query: "(min-width: 768px)" })
                     ? 20
                     : 20,
