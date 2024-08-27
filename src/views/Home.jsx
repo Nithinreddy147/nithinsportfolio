@@ -57,7 +57,7 @@ const Home = () => {
               {contactLinks.map((el) => (
                 <a
                   href={el.link}
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   className="mr-5 cursor-pointer mt-8 hover:scale-125"
                 >
                   <img alt="" src={el.url} />

@@ -32,7 +32,7 @@ const Education = () => {
           </h4>
           <div className="flex justify-around">
             <div>
-              <img width="500" style={{ marginTop: 20 }} src={eduBg} />
+              <img width="500" style={{ marginTop: 20 }} alt="" src={eduBg} />
             </div>
             <div className="mt-8 flex-row md:items-stretch ">
               {educationData.map((el) => (

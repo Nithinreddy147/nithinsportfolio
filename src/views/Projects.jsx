@@ -50,7 +50,7 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/Blogging-platform"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -69,7 +69,7 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://blogging-platform.netlify.app/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Visit Website
@@ -90,7 +90,7 @@ const Projects = () => {
               <div style={{ margin: "auto", padding: 40, width: "50%" }}>
                 <a
                   href="https://blogging-platform.netlify.app/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                 >
                   <img class="rounded-t-lg w-full" src={blogProj} alt="" />
                 </a>
@@ -125,7 +125,7 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/Text-Case-Converter"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -144,7 +144,7 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://main--text-case-converter88.netlify.app/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Visit Website
@@ -165,7 +165,7 @@ const Projects = () => {
               <div style={{ margin: "auto", padding: 40, width: "50%" }}>
                 <a
                   href="https://main--text-case-converter88.netlify.app/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                 >
                   <img class="rounded-t-lg w-full" src={textProj} alt="" />
                 </a>
@@ -200,7 +200,7 @@ const Projects = () => {
                 </p>
                 <a
                   href="https://github.com/Nithinreddy147/News-app"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Source Code
@@ -219,7 +219,7 @@ const Projects = () => {
                 </a>
                 <a
                   href="/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                   class="inline-flex items-center mx-3 py-2 px-3 text-sm font-medium text-center text-white bg-blue-500 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 hidden"
                 >
                   Visit Website
@@ -240,7 +240,7 @@ const Projects = () => {
               <div style={{ margin: "auto", padding: 40, width: "50%" }}>
                 <a
                   //href="/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer noopener"
                 >
                   <img class="rounded-t-lg w-full" src={newsProj} alt="" />
                 </a>
