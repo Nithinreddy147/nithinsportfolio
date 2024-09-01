@@ -17,7 +17,7 @@ const Home = () => {
         style={
           darkMode
             ? { backgroundImage: `url('${cloud}')`, backgroundSize: "cover" }
-            : { backgroundImage: `url('${cloudDark}'`, backgroundSize: "cover" }
+            : { backgroundImage: `url('${cloudDark}'`, backgroundSize: "cover"}
         }
       >
         <main
