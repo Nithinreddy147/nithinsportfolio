@@ -3,43 +3,30 @@ import { Link } from "react-scroll";
 import { ThemeContext } from "../themeProvider";
 import { motion, AnimatePresence } from "framer-motion";
 import Hamburger from "hamburger-react";
-import lightBulb from "../assets/light bulb.png"
-import darkBulb from "../assets/dark bulb.png"
+import lightBulb from "../assets/light bulb.png";
+import darkBulb from "../assets/dark bulb.png";
+
+const links = [
+  { name: "Home", route: "/" },
+  { name: "About", route: "about" },
+  { name: "Experience", route: "experience" },
+  { name: "Education", route: "education" },
+  { name: "Projects", route: "projects" },
+  { name: "Contact", route: "contact" },
+];
 
 const Navbar = () => {
   const theme = useContext(ThemeContext);
   const [toggle, setToggle] = useState(false);
   const darkMode = theme.state.darkMode;
-  const links = [
-    {
-      name: "Home",
-      route: "/",
-    },
-    {
-      name: "About",
-      route: "about",
-    },
-    {
-      name: "Education",
-      route: "education",
-    },
-    {
-      name: "Projects",
-      route: "projects",
-    },
-    {
-      name: "Contact",
-      route: "contact",
-    },
-  ];
 
   function toggleTheme() {
-    if (darkMode === true) {
-      theme.dispatch({ type: "LIGHTMODE" });
-    } else {
-      theme.dispatch({ type: "DARKMODE" });
-    }
+    theme.dispatch({ type: darkMode ? "LIGHTMODE" : "DARKMODE" });
   }
+
+  const navLinkClass = darkMode
+    ? "block py-2 px-3 text-black hover:bg-blue-500 hover:text-white rounded-md"
+    : "block py-2 px-3 text-white hover:bg-blue-500 hover:text-black rounded-md";
 
   return (
     <>
@@ -56,111 +43,103 @@ const Navbar = () => {
               href="/"
               className={
                 darkMode
-                  ? "text-xl font-medium text-decoration-none whitespace-nowrap text-black"
-                  : "text-xl font-medium text-decoration-none whitespace-nowrap text-white"
+                  ? "text-xl font-medium whitespace-nowrap text-black"
+                  : "text-xl font-medium whitespace-nowrap text-white"
               }
             >
-              {`<Nίτɧίη__ɾεδδγ/>`}
+              {`<Nithin/>`}
             </a>
           </div>
-          <div class="hidden justify-between items-center w-full md:flex md:w-auto ">
-            <ul
-              class={
-                "flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium"
-              }
-            >
+          <div className="hidden justify-between items-center w-full md:flex md:w-auto">
+            <ul className="flex flex-col mt-4 md:flex-row md:space-x-6 md:mt-0 md:text-md md:font-medium">
               {links.map((el) => (
-                <li className="cursor-pointer">
+                <li key={el.route} className="cursor-pointer">
                   <Link
                     to={el.route}
-                    activeClass={"text-white bg-blue-500"}
+                    activeClass="text-white bg-blue-500"
                     spy={true}
                     smooth={true}
-                    className={
-                      darkMode
-                        ? "block py-2 px-3 text-black hover:bg-blue-500 hover:text-white rounded-md"
-                        : "block py-2 px-3 text-white hover:bg-blue-500 hover:text-black rounded-md"
-                    }
+                    offset={-70}
+                    className={navLinkClass}
                   >
                     {el.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <div onClick={() => toggleTheme()}>
-              {darkMode ? (
-                <img
-                  src={lightBulb}
-                  className="w-10 ml-6 cursor-pointer hover:scale-1.50 block"
-                  alt=""
-                />
-              ) : (
-                <img
-                  src={darkBulb}
-                  className="w-10 ml-6 cursor-pointer hover:scale-1.50 block"
-                  alt=""
-                />
-              )}
-            </div>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle color theme"
+              className="ml-4 p-0 bg-transparent border-0"
+            >
+              <img
+                src={darkMode ? lightBulb : darkBulb}
+                className="w-10 cursor-pointer hover:scale-110 transition-transform"
+                alt=""
+                width={40}
+                height={40}
+              />
+            </button>
           </div>
 
           <div className="flex md:hidden items-center">
-            <div onClick={() => toggleTheme()}>
-              {darkMode ? (
-                <img
-                  src={lightBulb}
-                  className="w-10 mr-4 cursor-pointer hover:scale-1.50 block"
-                  alt=""
-                />
-              ) : (
-                <img
-                  src={darkBulb}
-                  alt=""
-                  className="w-10 mr-4 cursor-pointer hover:scale-1.50 block"
-                />
-              )}
-            </div>
-
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label="Toggle color theme"
+              className="mr-2 p-0 bg-transparent border-0"
+            >
+              <img
+                src={darkMode ? lightBulb : darkBulb}
+                className="w-10 cursor-pointer hover:scale-110 transition-transform"
+                alt=""
+                width={40}
+                height={40}
+              />
+            </button>
             <Hamburger
               toggled={toggle}
               size={22}
-              duration={0.8}
-              distance={"lg"}
+              duration={0.5}
+              distance="lg"
               toggle={setToggle}
               color={darkMode ? "#000000" : "#ffffff"}
             />
           </div>
         </div>
-        {/* Mobile view nav bar */}
       </nav>
       <AnimatePresence>
         {toggle && (
           <motion.div
-            initial={{ x: 100 }}
-            animate={{ x: 0, transition: { type: "spring" } }}
-            exit={{ x: 200, transition: { type: "spring" } }}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1, transition: { type: "spring" } }}
+            exit={{ x: 80, opacity: 0, transition: { type: "spring" } }}
             className={
               darkMode
-                ? "bg-white py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40"
-                : "bg-black py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40"
+                ? "bg-white py-2 px-2 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-44"
+                : "bg-black py-2 px-2 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-44"
             }
           >
-            <ul class="md:hidden md:flex-row md:space-y-8 md:mt-0 md:text-md md:font-medium">
+            <ul className="md:hidden">
               {links.map((el) => (
-                <Link
-                  to={el.route}
-                  activeClass={"text-white bg-blue-500"}
-                  className={
-                    darkMode
-                      ? "hover:bg-blue-500 text-black block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white"
-                      : "hover:bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white"
-                  }
-                  spy={true}
-                  smooth={true}
-                  onClick={() => setToggle(false)}
-                >
-                  <li>{el.name}</li>
-                </Link>
+                <li key={el.route}>
+                  <Link
+                    to={el.route}
+                    activeClass="text-white bg-blue-500"
+                    className={
+                      darkMode
+                        ? "hover:bg-blue-500 text-black block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white"
+                        : "hover:bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-1"
+                    }
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    onClick={() => setToggle(false)}
+                  >
+                    {el.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </motion.div>
